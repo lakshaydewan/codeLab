@@ -5,6 +5,15 @@
   --foreground: #171717;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

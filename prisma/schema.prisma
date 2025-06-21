@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TemplateType {
+  javascript
+  python
+  express
+  vite
+}
+
+enum Privacy {
+  public
+  private
+}
+
+model Template {
+  id              String       @id @default(cuid())
+  userId          String // Clerk user ID
+  name            String
+  type            TemplateType
+  content         String
+  privacy         Privacy
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  fileSystemTree  Json? // Optional JSON structure for file system tree
+}
