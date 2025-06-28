@@ -12,7 +12,7 @@ export default function CreateAppPage() {
   const [loading, setLoading] = useState(false);
   const [templateName, setTemplateName] = useState<string | null>(null);
   const [privacy, setPrivacy] = useState<"public" | "private">("public");
-  const [language, setLanguage] = useState<"javascript" | "python" | "express" | "vite">("javascript");
+  const [language, setLanguage] = useState<"javascript" | "python" | "express" | "vite">("vite");
 
   function generateTemplateId() {
     const adjectives = [
@@ -88,11 +88,22 @@ export default function CreateAppPage() {
                 <label className="flex items-center space-x-2 p-3 rounded bg-gray-800 hover:bg-gray-700 cursor-pointer">
                   <div className="relative">
                     <input
+                      onClick={() => setLanguage("vite")}
+                      type="radio"
+                      name="language"
+                      defaultChecked
+                      className="appearance-none h-4 w-4 rounded-full border border-gray-500 checked:border-blue-500 checked:border-4 transition-all duration-200 ease-in-out"
+                    />
+                  </div>
+                  <span className='flex justify-center items-center gap-3'>Vite + React <span className='text-xs font-semibold font-sans p-0.5 rounded border border-blue-400 bg-blue-800 text-blue-300'>new</span></span>
+                </label>
+                <label className="flex items-center space-x-2 p-3 rounded bg-gray-800 hover:bg-gray-700 cursor-pointer">
+                  <div className="relative">
+                    <input
                       onClick={() => setLanguage("javascript")}
                       type="radio"
                       name="language"
                       className="appearance-none h-4 w-4 rounded-full border border-gray-500 checked:border-blue-500 checked:border-4 transition-all duration-200 ease-in-out"
-                      defaultChecked
                     />
                   </div>
                   <span>JavaScript</span>
@@ -107,17 +118,6 @@ export default function CreateAppPage() {
                     />
                   </div>
                   <span>Python</span>
-                </label>
-                <label className="flex items-center space-x-2 p-3 rounded bg-gray-800 hover:bg-gray-700 cursor-pointer">
-                  <div className="relative">
-                    <input
-                      onClick={() => setLanguage("vite")}
-                      type="radio"
-                      name="language"
-                      className="appearance-none h-4 w-4 rounded-full border border-gray-500 checked:border-blue-500 checked:border-4 transition-all duration-200 ease-in-out"
-                    />
-                  </div>
-                  <span>Vite + React</span>
                 </label>
               </div>
             </div>
