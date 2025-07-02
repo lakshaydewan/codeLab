@@ -19,7 +19,7 @@ const DashPage = async () => {
             <section className="flex h-screen w-full items-center justify-center bg-neutral-900 text-white">
                 <div className="flex items-center gap-4 top-5 right-4 md:right-10 absolute">
                         <SignedOut>
-                            <SignInButton forceRedirectUrl={"/main"}>
+                            <SignInButton forceRedirectUrl={"/"}>
                                <span className='font-mono border rounded-sm border-gray-600 p-1 px-3 cursor-pointer font-bold'>Sign-In</span>
                             </SignInButton> 
                         </SignedOut>
